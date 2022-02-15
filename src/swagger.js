@@ -27,7 +27,7 @@ const config = {
   paths:{
     "/home": {
         "get": {
-            "tags": ["Default"],
+            "tags": ["home"],
             "summary": "Default message on server",
             "operationId": "",
             "requestBody": {
@@ -53,7 +53,7 @@ const config = {
     },
     "/api/aarticles":{
         "get": {
-            "tags": ["Default"],
+            "tags": ["articles"],
             "summary": "Default message on server",
             "operationId": "",
             "requestBody": {
@@ -79,7 +79,7 @@ const config = {
     },
     "/api/articles":{
         "get": {
-            "tags": ["Default"],
+            "tags": ["articles"],
             "summary": "Default message on server",
             "operationId": "",
             "security": [{
@@ -113,7 +113,7 @@ const config = {
     },
     "/api/articles/{id}":{
       "get": {
-          "tags": ["Default"],
+          "tags": ["articles"],
           "summary": "Default message on server",
           "parameters":[
            {
@@ -156,7 +156,7 @@ const config = {
    },
     "/api/add-articles": {
       "post": {
-        "tags": ["Default"],
+        "tags": ["articles"],
         "summary": "creating an article",
         "description": "",
         "security": [{
@@ -200,7 +200,7 @@ const config = {
     },
     "/api/del-articles/{id}":{
       "delete": {
-          "tags": ["Default"],
+          "tags": ["articles"],
           "summary": "article deleting",
           "parameters":[
            {
@@ -243,7 +243,7 @@ const config = {
     },
     "/api/up-articles/{id}":{
         "patch": {
-            "tags": ["Default"],
+            "tags": ["articles"],
             "summary": "article updating",
             "parameters":[
              {
@@ -286,7 +286,7 @@ const config = {
     },
     "/api/articles-like/{id}":{
       "post": {
-          "tags": ["Default"],
+          "tags": ["articles"],
           "summary": "article updating",
           "parameters":[
            {
@@ -329,8 +329,8 @@ const config = {
   },
     "/api/add-users": {
         "post": {
-          "tags": ["Default"],
-          "summary": "manager signup",
+          "tags": ["authentication"],
+          "summary": "users signup",
           "description": "",
           "produces": ["application/json"],
           "parameters": [
@@ -426,7 +426,7 @@ const config = {
     "/api/del-users/{id}":{
       "delete": {
           "tags": ["Default"],
-          "summary": "article deleting",
+          "summary": "deleting a user",
           "parameters":[
            {
               "in": "path",
@@ -540,7 +540,7 @@ const config = {
     },
     "/api/login":{
         "post": {
-            "tags": ["Default"],
+            "tags": ["authentication"],
             "summary": "everyone login",
             "description": "",
             "produces": ["application/json"],

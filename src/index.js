@@ -1,5 +1,5 @@
 import express from "express"  
-import con from "mongoose"
+import mongoose from "mongoose"
 import  users from "./routes/users.js"
 import articles from "./routes/articles.js"
 import messages from "./routes/messages.js"
@@ -8,10 +8,10 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerOptions from './swagger.js';
 import bodyParser from 'body-parser'
 
-const { connect } = con
+// const { connect } = con
 let app = express();
 
-connect(process.env.DATABASE,{useNewUrlParser: true})
+mongoose.connect(process.env.DATABASE,{useNewUrlParser: true, useUnifiedTopology: true,})
     .then(()=>{
         const port = process.env.PORT || 7000
         app.listen(port ,()=>{
@@ -30,4 +30,4 @@ connect(process.env.DATABASE,{useNewUrlParser: true})
     app.use("/api",messages)
     app.use("/api",login)
 
-  export default app;
+//   export default app;
