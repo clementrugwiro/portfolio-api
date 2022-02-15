@@ -25,7 +25,7 @@ const config = {
   consumes: ['application/json'],
   produces: ['application/json'],
   paths:{
-    "/home": {
+    "/": {
         "get": {
             "tags": ["home"],
             "summary": "Default message on server",
