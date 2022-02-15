@@ -64,3 +64,6 @@ jspm_packages/
 
 # next.js build output
 .next
+
+.env.development
+.env.test
