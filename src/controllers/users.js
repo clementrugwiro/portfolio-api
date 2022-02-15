@@ -1,7 +1,7 @@
 import user from "../models/user.js";
 
 const handleErrors=(err)=>{
-    console.log(err.message,err.code);
+    // console.log(err.message,err.code);
     let errors={
         firstname:'',
         lastname:'',

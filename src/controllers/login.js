@@ -7,7 +7,7 @@ const { sign } = pkg;
 const { compare } = con
 
 const handleErrors=(err)=>{
-    console.log(err.message,err.code);
+    // console.log(err.message,err.code);
     let errors={
         email:'',
         pwd:''
@@ -33,7 +33,7 @@ export default async function loginpost(req,res){
     const uasers = await user.find()
     // console.log(uasers)
     const auser = uasers.find(user=>user.email===req.body.email)
-    console.log(auser)
+    // console.log(auser)
     if(!auser){
         return res.status(400).send("couldn't find the user")
     }
@@ -45,7 +45,7 @@ export default async function loginpost(req,res){
 
         const accesstoken = sign(user, process.env.ACCESS_TOKEN_SECRET)
         res.json({accesstoken:accesstoken})
-        console.log(user)
+        // console.log(user)
         // res.send("successfully logged in")
     }
     else{

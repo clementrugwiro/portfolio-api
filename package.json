@@ -9,7 +9,7 @@
     "start": "cross-env NODE_ENV=development babel-node ./src/index.js",
     "dev": "cross-env NODE_ENV=development nodemon --exec npm start",
     "test": "cross-env NODE_ENV=test nyc mocha --recursive --require @babel/polyfill --require @babel/register ./src/test/*.js --timeout 500000000 --exit",
-    "cover": "cross-env NODE_ENV=test nyc mocha --recursive --exit",
+    "cover": "cross-env NODE_ENV=test nyc mocha --recursive --exit ",
     "make-badges": "cross-env NODE_ENV=test istanbul-badges-readme",
     "make-badges-silent": "istanbul-badges-readme --silent",
     "make-badges-custom-dir": "istanbul-badges-readme --coverageDir='./my-custom-coverage'"
@@ -28,6 +28,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.17.0",
     "babel-cli": "^6.26.0",
     "bcrypt": "^5.0.1",

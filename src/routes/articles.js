@@ -11,8 +11,8 @@ articles.get("/articles", authenticate, articlesget)
 articles.post("/articles-like/:id",authenticate, articlelike)
 articles.get("/articles/:id", articleget)
 articles.post("/add-articles", authenticate, articlepost)
-articles.patch("/up-articles/:id", articlepatch)
-articles.delete("/del-articles/:id", articledelete)
+articles.patch("/up-articles/:id",authenticate, articlepatch)
+articles.delete("/del-articles/:id",authenticate, articledelete)
 
 
 
