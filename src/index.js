@@ -22,7 +22,7 @@ mongoose.connect(process.env.DATABASE,{useNewUrlParser: true, useUnifiedTopology
 
     app.use(bodyParser.json())
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerOptions))
-    app.use("/",(req,res)=>{
+    app.use("/home",(req,res)=>{
         res.status(200).send({status:200,message:"you on home"})
     })
     app.use("/api",articles)

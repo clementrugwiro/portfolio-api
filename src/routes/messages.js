@@ -4,7 +4,7 @@ import authenticate from "../middleware/authenticate.js"
 const messages = Router()
 
 
-messages.get("/messages",authenticate,messageget)
+messages.get("/amessages",authenticate,messageget)
 
 messages.post("/messages", messagepost)
 

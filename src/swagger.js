@@ -25,7 +25,7 @@ const config = {
   consumes: ['application/json'],
   produces: ['application/json'],
   paths:{
-    "/": {
+    "/home": {
         "get": {
             "tags": ["home"],
             "summary": "Default message on server",
@@ -77,6 +77,87 @@ const config = {
             "x-codegen-request-body-name": "body"
         }
     },
+    "/api/adislikes":{
+      "get": {
+          "tags": ["articles"],
+          "summary": "Default message on server",
+          "operationId": "",
+          "requestBody": {
+          "description": "default router should all articles that were created",
+          "content": {
+              "application/json": {
+              "schema": {}
+              },
+              "application/xml": {
+              "schema": {}
+              }
+          },
+          "required": false
+          },
+          "responses": {
+          "200": {
+              "description": "Message of successful request",
+              "content": {}
+          }
+          },
+          "x-codegen-request-body-name": "body"
+      }
+  },
+  "/api/alikes":{
+    "get": {
+        "tags": ["articles"],
+        "summary": "Default message on server",
+        "operationId": "",
+        "requestBody": {
+        "description": "default router should all articles that were created",
+        "content": {
+            "application/json": {
+            "schema": {}
+            },
+            "application/xml": {
+            "schema": {}
+            }
+        },
+        "required": false
+        },
+        "responses": {
+        "200": {
+            "description": "Message of successful request",
+            "content": {}
+        }
+        },
+        "x-codegen-request-body-name": "body"
+    }
+},
+"/api/acomment":{
+  "get": {
+      "tags": ["articles"],
+      "summary": "Default message on server",
+      "security": [{
+        "JWT": [],
+      }],
+      "operationId": "",
+      "requestBody": {
+      "description": "default router should all articles that were created",
+      "content": {
+          "application/json": {
+          "schema": {}
+          },
+          "application/xml": {
+          "schema": {}
+          }
+      },
+      "required": false
+      },
+      "responses": {
+      "200": {
+          "description": "Message of successful request",
+          "content": {}
+      }
+      },
+      "x-codegen-request-body-name": "body"
+  }
+},
     "/api/articles":{
         "get": {
             "tags": ["articles"],
@@ -327,6 +408,69 @@ const config = {
           "x-codegen-request-body-name": "body"
       }
   },
+  "/api/articles-comment/{id}":{
+    "post": {
+        "tags": ["articles"],
+        "summary": "article updating",
+        "parameters":[
+         {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "description": "id of article"
+          },
+          { "name": "the comment",
+          "in": "body",
+          "description": "Tthe comment body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "commenttxt": {
+                "type": "string",
+                "example": "this blog is spectacular"
+              },
+            },
+          }
+          }
+        ],
+        "operationId": "",
+        "security": [{
+          "JWT": [],
+        }],
+        "requestBody": {
+        "description": "default router should all articles that were created",
+        "content": {
+            "application/json": {
+            "schema": {}
+            },
+            "application/xml": {
+            "schema": {}
+            }
+        },
+        
+        "required": false
+        },
+        "properties": {
+          "commenttxt": {
+            "type": "string",
+            "example": "this blog is spectacular"
+          },
+        },
+        "responses": {
+        "403": {
+            "description": "message of request when not Logged in ",
+            "content": {}
+        },
+        "200": {
+            "description": "Message of successful request",
+            "content": {}
+        }
+        },
+        "x-codegen-request-body-name": "body"
+    }
+},
     "/api/add-users": {
         "post": {
           "tags": ["authentication"],
@@ -425,7 +569,7 @@ const config = {
     },
     "/api/del-users/{id}":{
       "delete": {
-          "tags": ["Default"],
+          "tags": ["MANAGER"],
           "summary": "deleting a user",
           "parameters":[
            {
@@ -509,7 +653,7 @@ const config = {
           "x-codegen-request-body-name": "body"
       }
       },
-    "/api/messages":{
+    "/api/amessages":{
         "get": {
             "tags": ["MANAGER"],
             "summary": "Default message on server",
@@ -555,11 +699,11 @@ const config = {
                   "properties": {
                     "email": {
                       "type": "string",
-                      "example": "hunkclement@gmail.com"
+                      "example": "hunkclement@email.com"
                     },
                     "pwd": {
                       "type": "string",
-                      "example": "admin123"
+                      "example": "clement"
                     },
                   }
                 }
@@ -653,7 +797,7 @@ const config = {
     },
     "/api/messages/{id}":{
       "delete": {
-          "tags": ["Default"],
+          "tags": ["MANAGER"],
           "summary": "message deleting",
           "parameters":[
            {
