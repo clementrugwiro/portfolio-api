@@ -7,9 +7,13 @@ import login from "./routes/login.js"
 import swaggerUi from 'swagger-ui-express';
 import swaggerOptions from './swagger.js';
 import bodyParser from 'body-parser'
+import cors from 'cors'
 
 // const { connect } = con
 let app = express();
+    app.use(cors())
+
+
 
 mongoose.connect(process.env.DATABASE,{useNewUrlParser: true, useUnifiedTopology: true,})
     .then(()=>{
