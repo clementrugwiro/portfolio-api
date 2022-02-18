@@ -20,7 +20,7 @@ export async function messagepost(req,res){
 }
 export async function messagedelete(req,res){
     try{
-        await deleteOne({_id: req.params.id})
+        await message.deleteOne({_id: req.params.id})
         res.status(204).send()
     }
     catch{
