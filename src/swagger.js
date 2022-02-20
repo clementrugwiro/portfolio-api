@@ -9,7 +9,7 @@ const config = {
     description: '',
   },
   
-  schemes: ['http', 'https'],
+  schemes: ['https', 'http'],
   securityDefinitions: {
     JWT  : {
       type: 'apiKey',

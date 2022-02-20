@@ -27,7 +27,7 @@ const handleErrors=(err)=>{
 
 
 
-0103001161084
+
 
 export async function articlesget(req,res){
 const articles = await article.find()
