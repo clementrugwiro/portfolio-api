@@ -84,7 +84,7 @@ export async function articlepatch(req,res){
 }
 export async function articledelete(req,res){
     try{
-        await deleteOne({_id: req.params.id})
+        await article.deleteOne({_id: req.params.id})
         res.status(204).send()
     }
     catch{
